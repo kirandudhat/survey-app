@@ -11,7 +11,7 @@ import SearchBar from "material-ui-search-bar";
 import { FaEdit } from "react-icons/fa";
 import web from "../../images/Web.png";
 import Switch from "@mui/material/Switch";
-
+import Button from '@mui/material/Button';
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -49,11 +49,18 @@ const Survay = (props) => {
   };
   return (
     <Paper>
+      <div className="search-header">
+      <div className="search">
       <SearchBar
         value={searched}
         onChange={(searchVal) => requestSearch(searchVal)}
         onCancelSearch={() => cancelSearch()}
       />
+      </div>
+      <div className="create-button">
+      <Button variant="contained">Create Survey</Button>
+      </div>
+      </div>
       <TableContainer>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
